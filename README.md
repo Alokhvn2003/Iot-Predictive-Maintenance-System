@@ -66,6 +66,10 @@ Wiring Table
 | SSH1106G  | SDA           | Pin-11(GPIO 17)   | Display Data(Bus3) |
 ----------------------------------------------------------------------
 
+The Monitor.py code is used to define functionalities of the device such as reading vibration, frequency and temperature and display contents onto the OLED display.
+The app.py is the backend part of the code, where we use flask to generate a web server through which the dashboard can be accessed.
+The dashboard.html is the virtual dashboard web page, where we display the status and condition of the machine.
+
 **Auto-Start Service:**
 Go to:
 /etc/systemd/system/pred_maint.service
