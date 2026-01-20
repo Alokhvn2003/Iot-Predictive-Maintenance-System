@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PdM Dashboard | Alok N Vishwamitra</title>
+    <meta http-equiv="refresh" content="3">
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f7f6; margin: 0; padding: 20px; text-align: center; }
+        .container { max-width: 600px; margin: auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        h1 { color: #2c3e50; margin-bottom: 10px; }
+        .status-box { padding: 20px; border-radius: 10px; margin: 20px 0; font-weight: bold; font-size: 1.5em; }
+        
+        /* Dynamic colors based on AI Prediction */
+        .normal { background-color: #d4edda; color: #155724; border: 2px solid #c3e6cb; }
+        .anomaly { background-color: #f8d7da; color: #721c24; border: 2px solid #f5c6cb; animation: blink 1s infinite; }
+        
+        @keyframes blink { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; } }
+
+        .data-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px; }
+        .data-card { background: #e9ecef; padding: 15px; border-radius: 8px; }
+        .value { display: block; font-size: 1.2em; font-weight: bold; color: #333; }
+        .label { font-size: 0.9em; color: #666; text-transform: uppercase; }
+        .footer { margin-top: 30px; font-size: 0.8em; color: #999; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Machine Health Monitor</h1>
+    <p>Predictive Maintenance IoT Node</p>
+
+    <div class="status-box {{ 'anomaly' if data.ai == 'ANOMALY' else 'normal' }}">
+        STATUS: {{ data.ai }}
+    </div>
+
+    <div class="data-grid">
+        <div class="data-card">
+            <span class="label">Vibration</span>
+            <span class="value">{{ "%.2f"|format(data.vibration) }} g</span>
+        </div>
+        <div class="data-card">
+            <span class="label">Peak Freq</span>
+            <span class="value">{{ "%.1f"|format(data.frequency) }} Hz</span>
+        </div>
+        <div class="data-card">
+            <span class="label">Temperature</span>
+            <span class="value">{{ "%.1f"|format(data.temperature) }} °C</span>
+        </div>
+        <div class="data-card">
+            <span class="label">Connectivity</span>
+            <span class="value" style="color: green;">Online</span>
+        </div>
+    </div>
+
+    <div class="footer">
+        Project by Alok N Vishwamitra | NIE Mysore<br>
+        Monitored via Dataplicity Wormhole
+    </div>
+</div>
+
+</body>
+</html>
