@@ -32,9 +32,9 @@ except Exception as e:
 # Cloud & Log Config
 SERVER_URL = "http://127.0.0.1:80/data" # Accessible via Dataplicity Wormhole
 CSV_FILE = "machine_history.csv"
-SENDER_EMAIL = "alok.n.vishwamitra@gmail.com"
-SENDER_PASSWORD = "sumgdqcheewedrlb" 
-RECEIVER_EMAIL = "2024mca_aloknvishwamitra_a@nie.ac.in"
+SENDER_EMAIL = "yourmail@gmail.com"
+SENDER_PASSWORD = "gmail apps password" 
+RECEIVER_EMAIL = "reciever@gmail.com"
 
 def get_machine_health():
     samples = 64
